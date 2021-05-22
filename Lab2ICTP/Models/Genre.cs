@@ -11,7 +11,7 @@ namespace Lab2ICTP.Models
         {
             GamesGenres = new List<GamesGenres>();
         }
-        public int GenreId { get; set; }
+        public int Id { get; set; }
         [Display(Name = "Жанр")]
         [Required(ErrorMessage = "Поле не повинно бути порожнім")]
         public string Name { get; set; }

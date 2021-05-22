@@ -46,7 +46,7 @@ namespace Lab2ICTP.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutGenre(int id, Genre genre)
         {
-            if (id != genre.GenreId)
+            if (id != genre.Id)
             {
                 return BadRequest();
             }
@@ -80,7 +80,7 @@ namespace Lab2ICTP.Controllers
             _context.Genres.Add(genre);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetGenre", new { id = genre.GenreId }, genre);
+            return CreatedAtAction("GetGenre", new { id = genre.Id }, genre);
         }
 
         // DELETE: api/Genres/5
@@ -101,7 +101,7 @@ namespace Lab2ICTP.Controllers
 
         private bool GenreExists(int id)
         {
-            return _context.Genres.Any(e => e.GenreId == id);
+            return _context.Genres.Any(e => e.Id == id);
         }
     }
 }
